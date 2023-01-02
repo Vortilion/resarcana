@@ -5,6 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:gh-pages": "ng build --base-href \"https://vortilion.github.io/res-arcana_randomizer/\"",
+    "deploy:gh-pages": "npx angular-cli-ghpages --dir=dist/res-arcana_randomizer",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
