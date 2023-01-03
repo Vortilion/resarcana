@@ -1,11 +1,61 @@
-<app-main-nav>
-    <mat-tab-nav-panel #tabPanel>
-        <div class="container">
-            <div class="setup-phase">
-                <div>
-                    <router-outlet></router-outlet>
-                </div>
+
+<div
+    class="app-component"
+    [class.is-mobile]="mobileQuery.matches">
+    <mat-toolbar  
+        color="primary" 
+        class="main-toolbar toolbar">
+        <button 
+            type="button" 
+            [hidden]="!mobileQuery.matches" 
+            mat-icon-button 
+            (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <h1 class="app-name">Res Arcana - Setup Randomizer (by <a href="https://boardgamegeek.com/user/Vortilion" target="_blank">Vortilion</a>)</h1>
+    </mat-toolbar>
+
+    <mat-sidenav-container 
+        class="sidenav-container" 
+        [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+        <mat-sidenav
+            #sidenav
+            [mode]="mobileQuery.matches ? 'over' : 'side'"
+            [fixedInViewport]="mobileQuery.matches"
+            fixedTopGap="56"
+            [opened]="mobileQuery.matches ? 'false' : 'opened'">
+            <mat-nav-list class="sidebar-options-list">
+                <h3>Erweiterungen:</h3>
+                <mat-list-item>
+                    <mat-slide-toggle 
+                        class="variant-selector" 
+                        color="primary" 
+                        name="useLuxEtTenebrae"
+                        [checked]="useLuxEtTenebrae"
+                        (change)="onExpansionChange($event)">
+                            Luxt Et Tenebrae
+                            
+                    </mat-slide-toggle>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-slide-toggle 
+                        class="variant-selector" 
+                        color="primary" 
+                        name="usePerlaeImperii"
+                        [checked]="usePerlaeImperii" 
+                        (change)="onExpansionChange($event)">
+                            Perlae Imperii
+                    </mat-slide-toggle>
+                </mat-list-item>
+            </mat-nav-list>
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+            <div class="page-content">
+                useLuxEtTenebrae: {{ useLuxEtTenebrae }}<br />
+                usePerlaeImperii: {{ usePerlaeImperii }}<br />
+                monumentCount: {{ monumentCount }}
             </div>
-        </div>
-    </mat-tab-nav-panel>
-</app-main-nav>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>
