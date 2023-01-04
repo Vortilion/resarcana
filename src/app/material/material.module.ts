@@ -9,21 +9,10 @@ import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatCardModule } from '@angular/material/card';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
-    declarations: [],
-    imports: [
-        MatTableModule,
-        MatPaginatorModule,
-        MatToolbarModule,
-        MatTabsModule,
-        MatSidenavModule,
-        MatIconModule,
-        MatListModule,
-        MatButtonModule,
-        MatSlideToggleModule,
-        MatCardModule
-    ],
     exports: [
         MatTableModule,
         MatPaginatorModule,
@@ -34,7 +23,9 @@ import { MatCardModule } from '@angular/material/card';
         MatListModule,
         MatButtonModule,
         MatSlideToggleModule,
-        MatCardModule
+        MatCardModule,
+        MatRadioModule,
+        MatSelectModule
     ],
 })
 export class MaterialModule {}

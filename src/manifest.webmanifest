@@ -2,7 +2,7 @@
   "name": "res-arcana-randomizer",
   "short_name": "resarcanarandomizer",
   "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "background_color": "#722B10",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",

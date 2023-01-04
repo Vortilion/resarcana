@@ -12,16 +12,42 @@
     margin: 0 0 0 8px;
 }
 
-.is-mobile .toolbar {
-    position: fixed;
-    /* Make sure the toolbar will stay on top of the content as it scrolls past. */
-    z-index: 2;
-  }
+.is-mobile {
+    .toolbar {
+        position: fixed;
+        /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+        z-index: 2;
+    }
+
+    .sidenav-container {
+        flex: 1 0 auto;
+    }
+}
 
 .sidenav-container {
     flex: 1;
 }
 
-.is-mobile .sidenav-container {
-    flex: 1 0 auto;
-  }
+.page-content {
+    padding: 30px;
+}
+
+.options-list {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+
+    &__option {
+        padding: 15px;
+    }
+}
+
+.sidenav {
+    &__inner {
+        padding: 15px;
+    }
+}
+
+.divider {
+    margin-bottom: 15px;
+}
