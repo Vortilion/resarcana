@@ -20,7 +20,8 @@ export class ApplicationConfigService {
         }, {
             color: 'blue',
             name: 'Alchemistenturm'
-        }]
+        }],
+        set: 'base'
     }, {
         sides: [{
             color: 'orange',
@@ -29,7 +30,8 @@ export class ApplicationConfigService {
         }, {
             color: 'blue',
             name: 'Opfergrube'
-        }]
+        }],
+        set: 'base'
     }, {
         sides: [{
             color: 'orange',
@@ -38,7 +40,8 @@ export class ApplicationConfigService {
         }, {
             color: 'blue',
             name: 'Zwergenmine'
-        }]
+        }],
+        set: 'base'
     }, {
         sides: [{
             color: 'orange',
@@ -47,7 +50,8 @@ export class ApplicationConfigService {
         }, {
             color: 'blue',
             name: 'Versunkenes Schiff'
-        }]
+        }],
+        set: 'base'
     }, {
         sides: [{
             color: 'orange',
@@ -56,7 +60,8 @@ export class ApplicationConfigService {
         }, {
             color: 'blue',
             name: 'Bestarium'
-        }]
+        }],
+        set: 'base'
     }];
     
     luxEtTenebraePlacesOfPower: PlaceOfPowerTile[] = [{
@@ -68,6 +73,7 @@ export class ApplicationConfigService {
             color: 'blue',
             name: 'Kristallpalast'
         }],
+        set: 'lux'
     }, {
         sides: [{
             color: 'orange',
@@ -76,7 +82,8 @@ export class ApplicationConfigService {
         }, {
             color: 'blue',
             name: 'Tor zur Hölle'
-        }]
+        }],
+        set: 'lux'
     }];  
 
     perlImperiiPlacesOfPower: PlaceOfPowerTile[] = [{
@@ -88,6 +95,7 @@ export class ApplicationConfigService {
             color: 'blue',
             name: 'Alchemistenwerkstatt'
         }],
+        set: 'perl'
     }, {
         sides: [{
             color: 'orange',
@@ -96,7 +104,8 @@ export class ApplicationConfigService {
         }, {
             color: 'blue',
             name: 'Perlenriff'
-        }]
+        }],
+        set: 'perl'
     }]; 
 
 
@@ -120,6 +129,34 @@ export class ApplicationConfigService {
         tilesSelection.forEach((tile) => {
             returnArray.push(this.getRandomPlaceOfPowerSideForTile(tile));
         });
+
+        return returnArray;
+    }
+
+    getRandomCoreAndLuxPlaces(count: number): any[] {
+        let tilesSelection = this.getRandomCoreAndLuxPlaceTiles(count);
+        let returnArray: PlaceOfPowerSide[] = [];
+
+        tilesSelection.forEach((tile) => {
+            returnArray.push(this.getRandomPlaceOfPowerSideForTile(tile));
+        });
+
+        return returnArray;
+    }
+
+    private getRandomCoreAndLuxPlaceTiles(count: number): PlaceOfPowerTile[] {
+        let returnArray = [];
+        let mergedPlaceTiles:PlaceOfPowerTile[] = [];
+
+        mergedPlaceTiles = [...this.coreGamePlacesOfPower, ...this.luxEtTenebraePlacesOfPower];
+
+        console.debug('mergedPlaceTiles: ', mergedPlaceTiles);
+
+        let shuffledCoreAndLuxPlaces = this.shuffleArray(mergedPlaceTiles);
+
+        for (let i = 0; i < count; i++) {
+            returnArray.push(shuffledCoreAndLuxPlaces.pop());
+        }
 
         return returnArray;
     }

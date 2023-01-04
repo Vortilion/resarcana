@@ -4,6 +4,7 @@ import { MediaMatcher } from '@angular/cdk/layout';
 import { ApplicationConfigService } from './shared/application-config.service';
 import { MatSelectChange } from '@angular/material/select';
 import { PlayerCountOption } from './models/player-count-option.model';
+import { PlaceOfPowerSide } from './models/place-of-power-side.model';
 
 @Component({
     selector: 'app-root',
@@ -19,7 +20,7 @@ export class AppComponent implements OnInit, OnDestroy {
     placesCount!: number;
     mobileQuery!: MediaQueryList;
     playerCountList!: PlayerCountOption[];
-    randomPlacesOfPower!: any[];
+    randomPlacesOfPower!: PlaceOfPowerSide[];
 
     private _mobileQueryListener: () => void;
 
@@ -111,7 +112,15 @@ export class AppComponent implements OnInit, OnDestroy {
     }
 
     getAndSetRandomPlacesOfPower() {
-         this.randomPlacesOfPower = this.applicationConfigService.getRandomCorePlaces(this.placesCount);
+        if(!(this.useLuxEtTenebrae || this.usePerlaeImperii)) {
+            this.randomPlacesOfPower = this.applicationConfigService.getRandomCorePlaces(this.placesCount);
+        } else if(this.useLuxEtTenebrae && !this.usePerlaeImperii) {
+            this.randomPlacesOfPower = this.applicationConfigService.getRandomCoreAndLuxPlaces(this.placesCount);
+        } else if(!this.useLuxEtTenebrae && this.usePerlaeImperii) {
+
+        } else {
+
+        }
     }
 
     private setMonumentCountForPlayerCountAndExpansionsSelected(

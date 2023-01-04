@@ -72,15 +72,15 @@
 
         <mat-sidenav-content>
             <div class="page-content">
-                useLuxEtTenebrae: {{ useLuxEtTenebrae }}<br />
-                usePerlaeImperii: {{ usePerlaeImperii }}<br />
-                monumentCount: {{ monumentCount }}<br />
-                playerCount: {{ playerCount }}<br />
-                placesCount: {{ placesCount }}<br />
-                <button mat-raised-button color="primary" (click)="getAndSetRandomPlacesOfPower()">Randomize</button>
-                <div>
-                    <div *ngFor="let place of randomPlacesOfPower">{{place | json}}</div>
-                </div>
+                <p>
+                    Anzahl der Monumente für das Spiel: {{ monumentCount }}
+                </p>
+                <button mat-raised-button color="primary" (click)="getAndSetRandomPlacesOfPower()">Zufällige Orte wählen</button>
+                <ul>
+                    <li *ngFor="let place of randomPlacesOfPower">
+                        <span [ngClass]="place.color">{{place.name}}</span>
+                    </li>
+                </ul>
             </div>
             
         </mat-sidenav-content>
