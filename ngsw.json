@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1672827625833,
+  "timestamp": 1672833561610,
   "index": "https://vortilion.github.io/res-arcana_randomizer/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "https://vortilion.github.io/res-arcana_randomizer/favicon.ico",
         "https://vortilion.github.io/res-arcana_randomizer/index.html",
-        "https://vortilion.github.io/res-arcana_randomizer/main.07f1e60f354bfeb3.js",
+        "https://vortilion.github.io/res-arcana_randomizer/main.22329efe9d4d8b96.js",
         "https://vortilion.github.io/res-arcana_randomizer/manifest.webmanifest",
         "https://vortilion.github.io/res-arcana_randomizer/polyfills.a89d2cbfa6bc8416.js",
         "https://vortilion.github.io/res-arcana_randomizer/runtime.1b39d64df10dcb97.js",
@@ -58,8 +58,8 @@
     "https://vortilion.github.io/res-arcana_randomizer/assets/icons/starwars-glyphicons/css/starwars-glyphicons.css": "1950d767e4280b02764597618faf9d2a25549e2a",
     "https://vortilion.github.io/res-arcana_randomizer/assets/icons/starwars-glyphicons/fonts/starwars-glyphicons-webfont.ttf": "6539bf346da7979de886c289756046412370339f",
     "https://vortilion.github.io/res-arcana_randomizer/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "https://vortilion.github.io/res-arcana_randomizer/index.html": "82bd4c66f5e4a08ea512823588e18a7bf9dda79d",
-    "https://vortilion.github.io/res-arcana_randomizer/main.07f1e60f354bfeb3.js": "ee11b0622ce2cf787e9eee55b248872333e99481",
+    "https://vortilion.github.io/res-arcana_randomizer/index.html": "1a409f46c6b5a0aa75574bacde845dda721ac571",
+    "https://vortilion.github.io/res-arcana_randomizer/main.22329efe9d4d8b96.js": "752b00221d12743b52ab907054c775e777a453b3",
     "https://vortilion.github.io/res-arcana_randomizer/manifest.webmanifest": "6a6b21c7eff7657b3069e61a51fc06598901c292",
     "https://vortilion.github.io/res-arcana_randomizer/polyfills.a89d2cbfa6bc8416.js": "a39df7c9a3cdebf38e5e76e537e9822044cee078",
     "https://vortilion.github.io/res-arcana_randomizer/runtime.1b39d64df10dcb97.js": "3dad3dc7221fbd5645c958c05c6a944517644c8b",
