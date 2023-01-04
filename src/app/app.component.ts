@@ -117,9 +117,9 @@ export class AppComponent implements OnInit, OnDestroy {
         } else if(this.useLuxEtTenebrae && !this.usePerlaeImperii) {
             this.randomPlacesOfPower = this.applicationConfigService.getRandomCoreAndLuxPlaces(this.placesCount);
         } else if(!this.useLuxEtTenebrae && this.usePerlaeImperii) {
-
+            this.randomPlacesOfPower = this.applicationConfigService.getRandomCoreAndPerlPlaces(this.placesCount);
         } else {
-
+            this.randomPlacesOfPower = this.applicationConfigService.getRandomCoreAndLuxAndPerlPlaces(this.placesCount);
         }
     }
 

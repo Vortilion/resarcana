@@ -107,21 +107,7 @@ export class ApplicationConfigService {
         }],
         set: 'perl'
     }]; 
-
-
-      
-
-    private getRandomCorePlaceTiles(count: number): PlaceOfPowerTile[] {
-        let returnArray = [];
-        let shuffledCorePlaces = this.shuffleArray(this.coreGamePlacesOfPower);
-
-        for (let i = 0; i < count; i++) {
-            returnArray.push(shuffledCorePlaces.pop());
-        }
-
-        return returnArray;
-    }
-
+            
     getRandomCorePlaces(count: number): any[] {
         let tilesSelection = this.getRandomCorePlaceTiles(count);
         let returnArray: PlaceOfPowerSide[] = [];
@@ -142,7 +128,40 @@ export class ApplicationConfigService {
         });
 
         return returnArray;
+    }    
+
+    getRandomCoreAndPerlPlaces(count: number): any[] {
+        let tilesSelection = this.getRandomCoreAndPerlPlaceTiles(count);
+        let returnArray: PlaceOfPowerSide[] = [];
+
+        tilesSelection.forEach((tile) => {
+            returnArray.push(this.getRandomPlaceOfPowerSideForTile(tile));
+        });
+
+        return returnArray;
+    }   
+    
+    getRandomCoreAndLuxAndPerlPlaces(count: number): any[] {
+        let tilesSelection = this.getRandomCoreAndLuxAndPerlPlaceTiles(count);
+        let returnArray: PlaceOfPowerSide[] = [];
+
+        tilesSelection.forEach((tile) => {
+            returnArray.push(this.getRandomPlaceOfPowerSideForTile(tile));
+        });
+
+        return returnArray;
     }
+
+    private getRandomCorePlaceTiles(count: number): PlaceOfPowerTile[] {
+        let returnArray = [];
+        let shuffledCorePlaces = this.shuffleArray(this.coreGamePlacesOfPower);
+
+        for (let i = 0; i < count; i++) {
+            returnArray.push(shuffledCorePlaces.pop());
+        }
+
+        return returnArray;
+    } 
 
     private getRandomCoreAndLuxPlaceTiles(count: number): PlaceOfPowerTile[] {
         let returnArray = [];
@@ -150,12 +169,42 @@ export class ApplicationConfigService {
 
         mergedPlaceTiles = [...this.coreGamePlacesOfPower, ...this.luxEtTenebraePlacesOfPower];
 
-        console.debug('mergedPlaceTiles: ', mergedPlaceTiles);
-
         let shuffledCoreAndLuxPlaces = this.shuffleArray(mergedPlaceTiles);
 
         for (let i = 0; i < count; i++) {
             returnArray.push(shuffledCoreAndLuxPlaces.pop());
+
+        }
+
+        return returnArray;
+    }
+
+    private getRandomCoreAndPerlPlaceTiles(count: number): PlaceOfPowerTile[] {
+        let returnArray = [];
+        let mergedPlaceTiles:PlaceOfPowerTile[] = [];
+
+        mergedPlaceTiles = [...this.coreGamePlacesOfPower, ...this.perlImperiiPlacesOfPower];
+
+        let shuffledCoreAndPerlPlaces = this.shuffleArray(mergedPlaceTiles);
+
+        for (let i = 0; i < count; i++) {
+            returnArray.push(shuffledCoreAndPerlPlaces.pop());
+            
+        }
+
+        return returnArray;
+    }
+
+    private getRandomCoreAndLuxAndPerlPlaceTiles(count: number): PlaceOfPowerTile[] {
+        let returnArray = [];
+        let mergedPlaceTiles:PlaceOfPowerTile[] = [];
+
+        mergedPlaceTiles = [...this.coreGamePlacesOfPower, ...this.luxEtTenebraePlacesOfPower, ...this.perlImperiiPlacesOfPower];
+
+        let shuffledCoreAndLuxAndPerlPlaces = this.shuffleArray(mergedPlaceTiles);
+
+        for (let i = 0; i < count; i++) {
+            returnArray.push(shuffledCoreAndLuxAndPerlPlaces.pop());
         }
 
         return returnArray;
@@ -164,22 +213,7 @@ export class ApplicationConfigService {
     private getRandomPlaceOfPowerSideForTile(tile: PlaceOfPowerTile): PlaceOfPowerSide {
         let placesOfPowerShuffled = this.shuffleArray(tile.sides);
         return placesOfPowerShuffled[0];
-    }
-
-    private getRandomProperty(obj: any): any {
-        let keys = Object.keys(obj);
-
-        let returnVal: PlaceOfPowerSide = {
-            color: '',
-            name: ''
-        };
-
-        let randomKey = keys[ keys.length * Math.random() << 0];
-        returnVal['color'] = randomKey;
-        returnVal['name'] = obj[randomKey];
-
-        return returnVal;
-    };   
+    } 
 
     private shuffleArray(inArray: any[]): any[] { 
         let returnArray = inArray.slice();
