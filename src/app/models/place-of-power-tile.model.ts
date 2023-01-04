@@ -1,4 +1,5 @@
+import { PlaceOfPowerSide } from "./place-of-power-side.model";
+
 export interface PlaceOfPowerTile {
-    blue: string;
-    orange: string;
+    sides: PlaceOfPowerSide[]
 }

@@ -97,12 +97,16 @@ export class AppComponent implements OnInit, OnDestroy {
         } else if (event.source.name === 'usePerlaeImperii') {
             this.applicationConfigService.usePerlaeImperii.emit(event.checked);
         }
+
+        this.randomPlacesOfPower = [];
         
         this.setPlacesCountAndMonumentCountForPlayerCountAndExpansionsSelected(this.playerCount, this.useLuxEtTenebrae || this.usePerlaeImperii);
     }
 
     onPlayerCountChange(event: MatSelectChange) {
         this.applicationConfigService.playerCount.emit(event.value);
+
+        this.randomPlacesOfPower = [];
         this.setPlacesCountAndMonumentCountForPlayerCountAndExpansionsSelected(this.playerCount, this.useLuxEtTenebrae || this.usePerlaeImperii);
     }
 

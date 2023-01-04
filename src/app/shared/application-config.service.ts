@@ -13,37 +13,94 @@ export class ApplicationConfigService {
     placesCount = new EventEmitter<number>();
 
     coreGamePlacesOfPower: PlaceOfPowerTile[] = [{
-        orange: "Heiliger Hain", 
-        blue: "Alchemistenturm"
+        sides: [{
+            color: 'orange',
+            name: 'Heiliger Hain'
+
+        }, {
+            color: 'blue',
+            name: 'Alchemistenturm'
+        }]
     }, {
-        orange: "Katakomben der Toten", 
-        blue: "Opfergrube"
+        sides: [{
+            color: 'orange',
+            name: 'Katakomben der Toten'
+
+        }, {
+            color: 'blue',
+            name: 'Opfergrube'
+        }]
     }, {
-        orange: "Verfluchte Schmiede", 
-        blue: "Zwergenmine"
+        sides: [{
+            color: 'orange',
+            name: 'Verfluchte Schmiede'
+
+        }, {
+            color: 'blue',
+            name: 'Zwergenmine'
+        }]
     }, {
-        orange: "Korallenschloss", 
-        blue: "Versunkenes Schiff"
+        sides: [{
+            color: 'orange',
+            name: 'Korallenschloss'
+
+        }, {
+            color: 'blue',
+            name: 'Versunkenes Schiff'
+        }]
     }, {
-        orange: "Drachenhorst", 
-        blue: "Bestarium"
-    }];  
+        sides: [{
+            color: 'orange',
+            name: 'Drachenhorst'
+
+        }, {
+            color: 'blue',
+            name: 'Bestarium'
+        }]
+    }];
     
     luxEtTenebraePlacesOfPower: PlaceOfPowerTile[] = [{
-        orange: "Drachennest", 
-        blue: "Kristallpalast"
+        sides: [{
+            color: 'orange',
+            name: 'Drachennest'
+
+        }, {
+            color: 'blue',
+            name: 'Kristallpalast'
+        }],
     }, {
-        orange: "Temple des Abgrunds", 
-        blue: "Tor zur Hölle"
+        sides: [{
+            color: 'orange',
+            name: 'Tempel des Abgrunds'
+
+        }, {
+            color: 'blue',
+            name: 'Tor zur Hölle'
+        }]
     }];  
 
     perlImperiiPlacesOfPower: PlaceOfPowerTile[] = [{
-        orange: "Magische Menagerie", 
-        blue: "Alchemistenwerkstatt"
+        sides: [{
+            color: 'orange',
+            name: 'Magische Menagerie'
+
+        }, {
+            color: 'blue',
+            name: 'Alchemistenwerkstatt'
+        }],
     }, {
-        orange: "Blutinsel", 
-        blue: "Perlenriff"
+        sides: [{
+            color: 'orange',
+            name: 'Blutinsel'
+
+        }, {
+            color: 'blue',
+            name: 'Perlenriff'
+        }]
     }]; 
+
+
+      
 
     private getRandomCorePlaceTiles(count: number): PlaceOfPowerTile[] {
         let returnArray = [];
@@ -58,13 +115,18 @@ export class ApplicationConfigService {
 
     getRandomCorePlaces(count: number): any[] {
         let tilesSelection = this.getRandomCorePlaceTiles(count);
-        let returnArray: any[] = [];
+        let returnArray: PlaceOfPowerSide[] = [];
 
         tilesSelection.forEach((tile) => {
-            returnArray.push(this.getRandomProperty(tile));
+            returnArray.push(this.getRandomPlaceOfPowerSideForTile(tile));
         });
 
         return returnArray;
+    }
+
+    private getRandomPlaceOfPowerSideForTile(tile: PlaceOfPowerTile): PlaceOfPowerSide {
+        let placesOfPowerShuffled = this.shuffleArray(tile.sides);
+        return placesOfPowerShuffled[0];
     }
 
     private getRandomProperty(obj: any): any {
@@ -76,8 +138,7 @@ export class ApplicationConfigService {
         };
 
         let randomKey = keys[ keys.length * Math.random() << 0];
-        returnVal['color'] = randomKey; // blue or orange;
-
+        returnVal['color'] = randomKey;
         returnVal['name'] = obj[randomKey];
 
         return returnVal;
