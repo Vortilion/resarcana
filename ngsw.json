@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1672921491444,
+  "timestamp": 1672922227770,
   "index": "https://vortilion.github.io/res-arcana_randomizer/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "https://vortilion.github.io/res-arcana_randomizer/favicon.ico",
         "https://vortilion.github.io/res-arcana_randomizer/index.html",
-        "https://vortilion.github.io/res-arcana_randomizer/main.5136a255313cd84d.js",
+        "https://vortilion.github.io/res-arcana_randomizer/main.63f33da22debe2dd.js",
         "https://vortilion.github.io/res-arcana_randomizer/manifest.webmanifest",
         "https://vortilion.github.io/res-arcana_randomizer/polyfills.a89d2cbfa6bc8416.js",
         "https://vortilion.github.io/res-arcana_randomizer/runtime.1b39d64df10dcb97.js",
@@ -29,24 +29,34 @@
         "ignoreVary": true
       },
       "urls": [
+        "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-128x128.png",
+        "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-144x144.png",
+        "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-152x152.png",
         "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-192x192.png",
         "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-256x256.png",
         "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-384x384.png",
-        "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-512x512.png"
+        "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-512x512.png",
+        "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-72x72.png",
+        "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-96x96.png"
       ],
       "patterns": []
     }
   ],
   "dataGroups": [],
   "hashTable": {
+    "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
     "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-192x192.png": "62037d136a23a1d4b7535b75e9a52456b3e7767c",
     "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-256x256.png": "0657705bbed489f3433805659a39cf81c182ff7b",
     "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-384x384.png": "1be193bb2f5ae677e6f31e3c6fe88bfbeebc9798",
     "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-512x512.png": "21c3e1f235da05859a3145f2f325348d8834e2cb",
+    "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "https://vortilion.github.io/res-arcana_randomizer/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "https://vortilion.github.io/res-arcana_randomizer/index.html": "e4b7a82088da7e7f186ed9887fc523464bbc5c3c",
-    "https://vortilion.github.io/res-arcana_randomizer/main.5136a255313cd84d.js": "12a0458b8ca86002141eab3473eae01e1f31fae8",
-    "https://vortilion.github.io/res-arcana_randomizer/manifest.webmanifest": "1144135a49d1a135e5e131eabb564cab33960673",
+    "https://vortilion.github.io/res-arcana_randomizer/index.html": "adfafeb47e8c14ef7737286b2b6a04fa0af1dfd4",
+    "https://vortilion.github.io/res-arcana_randomizer/main.63f33da22debe2dd.js": "262f117207b547e5a9081cbaadab5fe5783f32e4",
+    "https://vortilion.github.io/res-arcana_randomizer/manifest.webmanifest": "8e0cb43147e15fef74e27d220fe3e53d639a241f",
     "https://vortilion.github.io/res-arcana_randomizer/polyfills.a89d2cbfa6bc8416.js": "a39df7c9a3cdebf38e5e76e537e9822044cee078",
     "https://vortilion.github.io/res-arcana_randomizer/runtime.1b39d64df10dcb97.js": "3dad3dc7221fbd5645c958c05c6a944517644c8b",
     "https://vortilion.github.io/res-arcana_randomizer/styles.34c5038da4535449.css": "f31f0c778bb5c846845112a16ebf8c59fa207ceb"
