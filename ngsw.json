@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1672838520064,
+  "timestamp": 1672921070343,
   "index": "https://vortilion.github.io/res-arcana_randomizer/index.html",
   "assetGroups": [
     {
@@ -29,38 +29,24 @@
         "ignoreVary": true
       },
       "urls": [
-        "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-128x128.png",
-        "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-144x144.png",
-        "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-152x152.png",
         "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-192x192.png",
+        "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-256x256.png",
         "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-384x384.png",
-        "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-512x512.png",
-        "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-72x72.png",
-        "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-96x96.png",
-        "https://vortilion.github.io/res-arcana_randomizer/assets/icons/starwars-glyphicons/chars.html",
-        "https://vortilion.github.io/res-arcana_randomizer/assets/icons/starwars-glyphicons/css/starwars-glyphicons.css",
-        "https://vortilion.github.io/res-arcana_randomizer/assets/icons/starwars-glyphicons/fonts/starwars-glyphicons-webfont.ttf"
+        "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-512x512.png"
       ],
       "patterns": []
     }
   ],
   "dataGroups": [],
   "hashTable": {
-    "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
-    "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
-    "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
-    "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
-    "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
-    "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
-    "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
-    "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
-    "https://vortilion.github.io/res-arcana_randomizer/assets/icons/starwars-glyphicons/chars.html": "ca258af2c952da1bab3bd69f3e95adebc363066f",
-    "https://vortilion.github.io/res-arcana_randomizer/assets/icons/starwars-glyphicons/css/starwars-glyphicons.css": "1950d767e4280b02764597618faf9d2a25549e2a",
-    "https://vortilion.github.io/res-arcana_randomizer/assets/icons/starwars-glyphicons/fonts/starwars-glyphicons-webfont.ttf": "6539bf346da7979de886c289756046412370339f",
+    "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-192x192.png": "62037d136a23a1d4b7535b75e9a52456b3e7767c",
+    "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-256x256.png": "0657705bbed489f3433805659a39cf81c182ff7b",
+    "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-384x384.png": "1be193bb2f5ae677e6f31e3c6fe88bfbeebc9798",
+    "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-512x512.png": "21c3e1f235da05859a3145f2f325348d8834e2cb",
     "https://vortilion.github.io/res-arcana_randomizer/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
     "https://vortilion.github.io/res-arcana_randomizer/index.html": "e4b7a82088da7e7f186ed9887fc523464bbc5c3c",
     "https://vortilion.github.io/res-arcana_randomizer/main.5136a255313cd84d.js": "12a0458b8ca86002141eab3473eae01e1f31fae8",
-    "https://vortilion.github.io/res-arcana_randomizer/manifest.webmanifest": "6a6b21c7eff7657b3069e61a51fc06598901c292",
+    "https://vortilion.github.io/res-arcana_randomizer/manifest.webmanifest": "a48e70f8c2a52335b64d1c361cc8ead45d0a3cef",
     "https://vortilion.github.io/res-arcana_randomizer/polyfills.a89d2cbfa6bc8416.js": "a39df7c9a3cdebf38e5e76e537e9822044cee078",
     "https://vortilion.github.io/res-arcana_randomizer/runtime.1b39d64df10dcb97.js": "3dad3dc7221fbd5645c958c05c6a944517644c8b",
     "https://vortilion.github.io/res-arcana_randomizer/styles.34c5038da4535449.css": "f31f0c778bb5c846845112a16ebf8c59fa207ceb"
