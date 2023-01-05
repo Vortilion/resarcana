@@ -49,9 +49,6 @@ export class AppComponent implements OnInit, OnDestroy {
         }, {
             label: '4 Spieler',
             value: 4,
-        }, {
-            label: '5 Spieler',
-            value: 5,
         }];
 
         this.applicationConfigService.useLuxEtTenebrae.subscribe(
@@ -100,8 +97,11 @@ export class AppComponent implements OnInit, OnDestroy {
         }
 
         this.randomPlacesOfPower = [];
+
+        let isExpansionSelected: boolean = this.useLuxEtTenebrae || this.usePerlaeImperii;
+        this.updatePlayerCountSelection(isExpansionSelected);
         
-        this.setPlacesCountAndMonumentCountForPlayerCountAndExpansionsSelected(this.playerCount, this.useLuxEtTenebrae || this.usePerlaeImperii);
+        this.setPlacesCountAndMonumentCountForPlayerCountAndExpansionsSelected(this.playerCount, isExpansionSelected);
     }
 
     onPlayerCountChange(event: MatSelectChange) {
@@ -112,14 +112,17 @@ export class AppComponent implements OnInit, OnDestroy {
     }
 
     getAndSetRandomPlacesOfPower() {
-        if(!(this.useLuxEtTenebrae || this.usePerlaeImperii)) {
-            this.randomPlacesOfPower = this.applicationConfigService.getRandomCorePlaces(this.placesCount);
-        } else if(this.useLuxEtTenebrae && !this.usePerlaeImperii) {
-            this.randomPlacesOfPower = this.applicationConfigService.getRandomCoreAndLuxPlaces(this.placesCount);
-        } else if(!this.useLuxEtTenebrae && this.usePerlaeImperii) {
-            this.randomPlacesOfPower = this.applicationConfigService.getRandomCoreAndPerlPlaces(this.placesCount);
+        this.randomPlacesOfPower = this.applicationConfigService.getRandomPlacesForExpansionAndNumber(this.useLuxEtTenebrae, this.usePerlaeImperii, this.placesCount);
+    }
+
+    private updatePlayerCountSelection(isExpansionSelected: boolean) {
+        if (isExpansionSelected) {
+            this.playerCountList.push({
+                label: '5 Spieler',
+                value: 5
+            })
         } else {
-            this.randomPlacesOfPower = this.applicationConfigService.getRandomCoreAndLuxAndPerlPlaces(this.placesCount);
+            this.playerCountList.pop();
         }
     }
 

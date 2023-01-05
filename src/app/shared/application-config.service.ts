@@ -109,40 +109,35 @@ export class ApplicationConfigService {
     }]; 
             
     getRandomCorePlaces(count: number): any[] {
-        let tilesSelection = this.getRandomCorePlaceTiles(count);
-        let returnArray: PlaceOfPowerSide[] = [];
-
-        tilesSelection.forEach((tile) => {
-            returnArray.push(this.getRandomPlaceOfPowerSideForTile(tile));
-        });
-
-        return returnArray;
+        return this.getRandomPlacesForExpansionAndNumber(false, false, count);
     }
 
     getRandomCoreAndLuxPlaces(count: number): any[] {
-        let tilesSelection = this.getRandomCoreAndLuxPlaceTiles(count);
-        let returnArray: PlaceOfPowerSide[] = [];
-
-        tilesSelection.forEach((tile) => {
-            returnArray.push(this.getRandomPlaceOfPowerSideForTile(tile));
-        });
-
-        return returnArray;
+        return this.getRandomPlacesForExpansionAndNumber(true, false, count);
     }    
+    
 
     getRandomCoreAndPerlPlaces(count: number): any[] {
-        let tilesSelection = this.getRandomCoreAndPerlPlaceTiles(count);
-        let returnArray: PlaceOfPowerSide[] = [];
-
-        tilesSelection.forEach((tile) => {
-            returnArray.push(this.getRandomPlaceOfPowerSideForTile(tile));
-        });
-
-        return returnArray;
+        return this.getRandomPlacesForExpansionAndNumber(false, true, count);
     }   
     
     getRandomCoreAndLuxAndPerlPlaces(count: number): any[] {
-        let tilesSelection = this.getRandomCoreAndLuxAndPerlPlaceTiles(count);
+        return this.getRandomPlacesForExpansionAndNumber(true, true, count);
+    }
+
+    getRandomPlacesForExpansionAndNumber(useLuxEtTenebrae: boolean, usePerlaeImperii: boolean, count: number) {
+        let tilesSelection: PlaceOfPowerTile[] = [];
+
+        if(!(useLuxEtTenebrae || usePerlaeImperii)) {
+            tilesSelection = this.getRandomCorePlaceTiles(count);
+        } else if (useLuxEtTenebrae && !usePerlaeImperii) {
+            tilesSelection = this.getRandomCoreAndLuxPlaceTiles(count);
+        } else if (!useLuxEtTenebrae && usePerlaeImperii) {
+            tilesSelection = this.getRandomCoreAndPerlPlaceTiles(count);
+        } else {
+            tilesSelection = this.getRandomCoreAndLuxAndPerlPlaceTiles(count);
+        }
+
         let returnArray: PlaceOfPowerSide[] = [];
 
         tilesSelection.forEach((tile) => {

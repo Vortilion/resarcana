@@ -1,11 +1,11 @@
 {
+    "name": "Res Arcana Randomizer",
+    "short_name": "res-arcana-randomizer",
     "theme_color": "#4b362d",
     "background_color": "#4b362d",
     "display": "standalone",
     "scope": "./",
     "start_url": "./",
-    "name": "Res Arcana Randomizer",
-    "short_name": "res-arcana-randomizer",
     "description": "A small setup randomizer for the boardgame Res Arcana.",
     "icons": [
         {
