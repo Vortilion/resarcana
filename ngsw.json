@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1672922346200,
+  "timestamp": 1672934435388,
   "index": "https://vortilion.github.io/res-arcana_randomizer/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "https://vortilion.github.io/res-arcana_randomizer/favicon.ico",
         "https://vortilion.github.io/res-arcana_randomizer/index.html",
-        "https://vortilion.github.io/res-arcana_randomizer/main.63f33da22debe2dd.js",
+        "https://vortilion.github.io/res-arcana_randomizer/main.dee779f47dcd7134.js",
         "https://vortilion.github.io/res-arcana_randomizer/manifest.webmanifest",
         "https://vortilion.github.io/res-arcana_randomizer/polyfills.a89d2cbfa6bc8416.js",
         "https://vortilion.github.io/res-arcana_randomizer/runtime.1b39d64df10dcb97.js",
@@ -54,8 +54,8 @@
     "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "https://vortilion.github.io/res-arcana_randomizer/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "https://vortilion.github.io/res-arcana_randomizer/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "https://vortilion.github.io/res-arcana_randomizer/index.html": "adfafeb47e8c14ef7737286b2b6a04fa0af1dfd4",
-    "https://vortilion.github.io/res-arcana_randomizer/main.63f33da22debe2dd.js": "262f117207b547e5a9081cbaadab5fe5783f32e4",
+    "https://vortilion.github.io/res-arcana_randomizer/index.html": "8514a0b02b8436bbc640832bfe414c5671f15d8a",
+    "https://vortilion.github.io/res-arcana_randomizer/main.dee779f47dcd7134.js": "0fbdf4ddbf391a2331caca7059366e789a286c0a",
     "https://vortilion.github.io/res-arcana_randomizer/manifest.webmanifest": "8c7cb619f94a8e94243e125ecd0eb80d0763f021",
     "https://vortilion.github.io/res-arcana_randomizer/polyfills.a89d2cbfa6bc8416.js": "a39df7c9a3cdebf38e5e76e537e9822044cee078",
     "https://vortilion.github.io/res-arcana_randomizer/runtime.1b39d64df10dcb97.js": "3dad3dc7221fbd5645c958c05c6a944517644c8b",
