@@ -1,0 +1,33 @@
+{
+    "creator-prefix": "by",
+    "options-label": "Options",
+    "expansions-label": "Expansions",
+    "players-label": "Players",
+    "player-count-label": "Number of players",
+    "player-count-select-label": "Please select",
+    "monument-count-label": "Number of Monuments",
+    "places-count-label": "Number of Places of Power",
+    "places-select-label": "Show random Places of Power",
+    "en-language-label": "English",
+    "de-language-label": "German",
+    "places-of-power": {
+        "sacred-grove": "Sacred Grove",
+        "alchemists-tower": "Alchemist's Tower",
+        "catacombs-of-the-dead": "Catacombs of the Dead",
+        "sacrificial-pit": "Sacrificial Pit",
+        "cursed-forge": "Cursed Forge",
+        "dwarven-mines": "Dwarven Mines",
+        "coral-castle": "Coral Castle",
+        "sunken-reef": "Sunken Reef",
+        "dragons-lair": "Dragon's Lair",
+        "sorcerers-bestiary": "Sorcerer's Bestiary",
+        "dragon-aerie": "Dragon Aerie",
+        "crystal-keep": "Crystal Keep",
+        "temple-of-the-abyss": "Temple of the Abyss",
+        "gate-of-hell": "Gate of Hell",
+        "mystical-menagerie": "Mystical Menagerie",
+        "alchemical-workshop": "Alchemical Workshop",
+        "blood-isle": "Blood Isle",
+        "pearl-bed": "Pearl Bed"
+    }
+}

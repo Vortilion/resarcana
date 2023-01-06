@@ -1,0 +1,33 @@
+{
+    "creator-prefix": "von",
+    "options-label": "Optionen",
+    "expansions-label": "Erweiterungen",
+    "players-label": "Spieler",
+    "player-count-label": "Anzahl Spieler",
+    "player-count-select-label": "Bitte auswählen",
+    "monument-count-label": "Anzahl Monumente",
+    "places-count-label": "Anzahl Orte der Macht",
+    "places-select-label": "Zufällige Orte der Macht anzeigen",
+    "en-language-label": "Englisch",
+    "de-language-label": "Deutsch",
+    "places-of-power": {
+        "sacred-grove": "Heiliger Hain",
+        "alchemists-tower": "Alchemistenturm",
+        "catacombs-of-the-dead": "Katakomben der Toten",
+        "sacrificial-pit": "Opfergrube",
+        "cursed-forge": "Verfluchte Schmiede",
+        "dwarven-mines": "Zwergenmine",
+        "coral-castle": "Korallenschloss",
+        "sunken-reef": "Versunkenes Schiff",
+        "dragons-lair": "Drachenhort",
+        "sorcerers-bestiary": "Bestarium",
+        "dragon-aerie": "Drachennest",
+        "crystal-keep": "Kristallpalast",
+        "temple-of-the-abyss": "Tempel des Abgrunds",
+        "gate-of-hell": "Tor zur Hölle",
+        "mystical-menagerie": "Magische Menagerie",
+        "alchemical-workshop": "Alchemistenwerkstatt",
+        "blood-isle": "Blutinsel",
+        "pearl-bed": "Perlenriff"
+    }
+}
