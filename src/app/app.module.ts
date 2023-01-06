@@ -10,9 +10,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { TranslocoRootModule } from './transloco-root.module';
 import { LanguageSelectorComponent } from './language-selector/language-selector.component';
 import { PageHeaderComponent } from './page-header/page-header.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
-    declarations: [AppComponent, LanguageSelectorComponent, PageHeaderComponent],
+    declarations: [AppComponent, LanguageSelectorComponent, PageHeaderComponent, HomeComponent],
     imports: [
         BrowserModule,
         MaterialModule,
@@ -31,6 +33,7 @@ import { PageHeaderComponent } from './page-header/page-header.component';
         }),
         HttpClientModule,
         TranslocoRootModule,
+        AppRoutingModule
     ],
     providers: [],
     bootstrap: [AppComponent],
