@@ -123,7 +123,7 @@ export class HomeComponent implements OnInit {
             this.useLuxEtTenebrae || this.usePerlaeImperii
         );
     }
-
+    
     getAndSetRandomPlacesOfPower() {
         this.randomPlacesOfPower =
             this.applicationConfigService.getRandomPlacesForExpansionAndNumber(
