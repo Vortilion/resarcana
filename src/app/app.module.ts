@@ -6,9 +6,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { HttpClientModule } from '@angular/common/http';
+import { TranslocoRootModule } from './transloco-root.module';
+import { LanguageSelectorComponent } from './language-selector/language-selector.component';
+import { PageHeaderComponent } from './page-header/page-header.component';
 
 @NgModule({
-    declarations: [AppComponent],
+    declarations: [AppComponent, LanguageSelectorComponent, PageHeaderComponent],
     imports: [
         BrowserModule,
         MaterialModule,
@@ -25,6 +29,8 @@ import { environment } from '../environments/environment';
           // or after 30 seconds (whichever comes first).
           registrationStrategy: 'registerWhenStable:30000'
         }),
+        HttpClientModule,
+        TranslocoRootModule,
     ],
     providers: [],
     bootstrap: [AppComponent],

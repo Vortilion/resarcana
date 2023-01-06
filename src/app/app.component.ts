@@ -5,6 +5,7 @@ import { ApplicationConfigService } from './shared/application-config.service';
 import { MatSelectChange } from '@angular/material/select';
 import { PlayerCountOption } from './models/player-count-option.model';
 import { PlaceOfPowerSide } from './models/place-of-power-side.model';
+import { TranslocoService } from '@ngneat/transloco';
 
 @Component({
     selector: 'app-root',
@@ -21,11 +22,13 @@ export class AppComponent implements OnInit, OnDestroy {
     mobileQuery!: MediaQueryList;
     playerCountList!: PlayerCountOption[];
     randomPlacesOfPower!: PlaceOfPowerSide[];
+    playerLabel!: string;
 
     private _mobileQueryListener: () => void;
 
     constructor(
         private applicationConfigService: ApplicationConfigService,
+        private translocoService: TranslocoService,
         changeDetectorRef: ChangeDetectorRef,
         media: MediaMatcher
     ) {
@@ -40,16 +43,19 @@ export class AppComponent implements OnInit, OnDestroy {
         this.monumentCount = 10;
         this.placesCount = 5;
         this.playerCount = 2;
+
         this.playerCountList = [{
-            label: '2 Spieler',
+            label: '2',
             value: 2,
         }, {
-            label: '3 Spieler',
+            label: '3',
             value: 3,
         }, {
-            label: '4 Spieler',
+            label: '4',
             value: 4,
         }];
+
+        
 
         this.applicationConfigService.useLuxEtTenebrae.subscribe(
             (useLuxEtTenebrae: boolean) => {
@@ -118,7 +124,7 @@ export class AppComponent implements OnInit, OnDestroy {
     private updatePlayerCountSelection(isExpansionSelected: boolean) {
         if (isExpansionSelected) {
             this.playerCountList.push({
-                label: '5 Spieler',
+                label: '5',
                 value: 5
             })
         } else {

@@ -1,83 +1,79 @@
-<div class="app-component" [class.is-mobile]="mobileQuery.matches">
-    <mat-toolbar color="primary" class="main-toolbar toolbar">
-        <button
-            type="button"
-            [hidden]="!mobileQuery.matches"
-            mat-icon-button
-            (click)="sidenav.toggle()">
-            <mat-icon>menu</mat-icon>
-        </button>
-        <h1
-            class="app-name"
-            [style.fontSize.px]="mobileQuery.matches ? 18 : 24">
-            Res Arcana - Setup Randomizer (by
-            <a href="https://boardgamegeek.com/user/Vortilion" target="_blank">Vortilion</a>)
-        </h1>
-    </mat-toolbar>
+<ng-container *transloco="let t">
+    <div class="app-component" [class.is-mobile]="mobileQuery.matches">
+        <app-page-header
+            [mobileQuery]="mobileQuery"
+            [sidebarHandle]="sidenav">
+        </app-page-header>
 
-    <mat-sidenav-container
-        class="sidenav-container"
-        [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-        <mat-sidenav
-            class="sidenav"
-            #sidenav
-            [mode]="mobileQuery.matches ? 'over' : 'side'"
-            [fixedInViewport]="mobileQuery.matches"
-            fixedTopGap="56"
-            [opened]="mobileQuery.matches ? 'false' : 'opened'">
-            <div class="sidenav__inner">
-                <h2>Optionen:</h2>
-                <mat-divider class="divider"></mat-divider>
-                <h3>Erweiterungen:</h3>
-                <div class="options-list">
-                    <mat-slide-toggle
-                        class="options-list__option"
-                        color="primary"
-                        name="useLuxEtTenebrae"
-                        [checked]="useLuxEtTenebrae"
-                        (change)="onExpansionChange($event)">
-                        Luxt Et Tenebrae
-                    </mat-slide-toggle>
-                    <mat-slide-toggle
-                        class="options-list__option"
-                        color="primary"
-                        name="usePerlaeImperii"
-                        [checked]="usePerlaeImperii"
-                        (change)="onExpansionChange($event)">
-                        Perlae Imperii
-                    </mat-slide-toggle>
+        <mat-sidenav-container
+            class="sidenav-container"
+            [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+            <mat-sidenav
+                class="sidenav"
+                #sidenav
+                [mode]="mobileQuery.matches ? 'over' : 'side'"
+                [fixedInViewport]="mobileQuery.matches"
+                fixedTopGap="56"
+                [opened]="mobileQuery.matches ? 'false' : 'opened'">
+                <div class="sidenav__inner">
+                    <h2>{{t('options-label')}}:</h2>
+                    <mat-divider class="divider"></mat-divider>
+                    <h3>{{t('expansions-label')}}:</h3>
+                    <div class="options-list">
+                        <mat-slide-toggle
+                            class="options-list__option"
+                            color="primary"
+                            name="useLuxEtTenebrae"
+                            [checked]="useLuxEtTenebrae"
+                            (change)="onExpansionChange($event)">
+                            Luxt Et Tenebrae
+                        </mat-slide-toggle>
+                        <mat-slide-toggle
+                            class="options-list__option"
+                            color="primary"
+                            name="usePerlaeImperii"
+                            [checked]="usePerlaeImperii"
+                            (change)="onExpansionChange($event)">
+                            Perlae Imperii
+                        </mat-slide-toggle>
+                    </div>
+
+                    <h3>{{t('player-count-label')}}:</h3>
+                    <mat-form-field appearance="fill">
+                        <mat-label>{{t('player-count-select-label')}}</mat-label>
+                        <mat-select
+                            [value]="playerCount"
+                            (selectionChange)="onPlayerCountChange($event)">
+                            <mat-option
+                                *ngFor="let playerCount of playerCountList"
+                                [value]="playerCount.value">
+                                {{ playerCount.label }} <span>{{t('players-label')}}</span>
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
                 </div>
+            </mat-sidenav>
 
-                <h3>Anzahl Spieler:</h3>
-                <mat-form-field appearance="fill">
-                    <mat-label>Bitte auswählen</mat-label>
-                    <mat-select
-                        [value]="playerCount"
-                        (selectionChange)="onPlayerCountChange($event)">
-                        <mat-option
-                            *ngFor="let playerCount of playerCountList"
-                            [value]="playerCount.value">
-                            {{ playerCount.label }}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
-            </div>
-        </mat-sidenav>
-
-        <mat-sidenav-content>
-            <div class="page-content">
-                <p>
-                    Anzahl Monumente: {{ monumentCount }}<br>
-                    Anzahl Orte der Macht: {{ placesCount }}
-                </p>
-                <button mat-raised-button color="primary" (click)="getAndSetRandomPlacesOfPower()">Zufällige Orte wählen</button>
-                <ul>
-                    <li *ngFor="let place of randomPlacesOfPower">
-                        <span [ngClass]="place.color">{{place.name}}</span>
-                    </li>
-                </ul>
-            </div>
-            
-        </mat-sidenav-content>
-    </mat-sidenav-container>
-</div>
+            <mat-sidenav-content>
+                <div class="page-content">
+                    <p>
+                        {{t('monument-count-label')}}: {{ monumentCount }}<br>
+                        {{t('places-count-label')}}: {{ placesCount }}
+                    </p>
+                    <button 
+                        mat-raised-button color="primary" 
+                        (click)="getAndSetRandomPlacesOfPower()">{{t('places-select-label')}}
+                    </button>
+                    <ng-container *transloco="let t; read: 'places-of-power'">
+                        <ul>
+                            <li *ngFor="let place of randomPlacesOfPower">
+                                <span [ngClass]="place.color">{{t(place.name)}}</span>
+                            </li>
+                        </ul>
+                    </ng-container>
+                </div>
+                
+            </mat-sidenav-content>
+        </mat-sidenav-container>
+    </div>
+</ng-container>

@@ -15,51 +15,51 @@ export class ApplicationConfigService {
     coreGamePlacesOfPower: PlaceOfPowerTile[] = [{
         sides: [{
             color: 'orange',
-            name: 'Heiliger Hain'
+            name: 'sacred-grove'
 
         }, {
             color: 'blue',
-            name: 'Alchemistenturm'
+            name: 'alchemists-tower'
         }],
         set: 'base'
     }, {
         sides: [{
             color: 'orange',
-            name: 'Katakomben der Toten'
+            name: 'catacombs-of-the-dead'
 
         }, {
             color: 'blue',
-            name: 'Opfergrube'
+            name: 'sacrificial-pit'
         }],
         set: 'base'
     }, {
         sides: [{
             color: 'orange',
-            name: 'Verfluchte Schmiede'
+            name: 'cursed-forge'
 
         }, {
             color: 'blue',
-            name: 'Zwergenmine'
+            name: 'dwarven-mines'
         }],
         set: 'base'
     }, {
         sides: [{
             color: 'orange',
-            name: 'Korallenschloss'
+            name: 'coral-castle'
 
         }, {
             color: 'blue',
-            name: 'Versunkenes Schiff'
+            name: 'sunken-reef'
         }],
         set: 'base'
     }, {
         sides: [{
             color: 'orange',
-            name: 'Drachenhorst'
+            name: 'dragons-lair'
 
         }, {
             color: 'blue',
-            name: 'Bestarium'
+            name: 'sorcerers-bestiary'
         }],
         set: 'base'
     }];
@@ -67,21 +67,21 @@ export class ApplicationConfigService {
     luxEtTenebraePlacesOfPower: PlaceOfPowerTile[] = [{
         sides: [{
             color: 'orange',
-            name: 'Drachennest'
+            name: 'dragon-aerie'
 
         }, {
             color: 'blue',
-            name: 'Kristallpalast'
+            name: 'crystal-keep'
         }],
         set: 'lux'
     }, {
         sides: [{
             color: 'orange',
-            name: 'Tempel des Abgrunds'
+            name: 'temple-of-the-abyss'
 
         }, {
             color: 'blue',
-            name: 'Tor zur Hölle'
+            name: 'gate-of-hell'
         }],
         set: 'lux'
     }];  
@@ -89,21 +89,21 @@ export class ApplicationConfigService {
     perlImperiiPlacesOfPower: PlaceOfPowerTile[] = [{
         sides: [{
             color: 'orange',
-            name: 'Magische Menagerie'
+            name: 'mystical-menagerie'
 
         }, {
             color: 'blue',
-            name: 'Alchemistenwerkstatt'
+            name: 'alchemical-workshop'
         }],
         set: 'perl'
     }, {
         sides: [{
             color: 'orange',
-            name: 'Blutinsel'
+            name: 'blood-isle'
 
         }, {
             color: 'blue',
-            name: 'Perlenriff'
+            name: 'pearl-bed'
         }],
         set: 'perl'
     }]; 

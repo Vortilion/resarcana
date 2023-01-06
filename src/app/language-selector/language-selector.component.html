@@ -1,0 +1,34 @@
+<button
+    mat-icon-button
+    [matMenuTriggerFor]="menu"
+    class="example-icon favorite-icon"
+    aria-label="Language Selection">
+    <mat-icon>translate</mat-icon>
+</button>
+<span>{{activeLang + '-language-label' | transloco}}</span>
+<mat-menu #menu="matMenu">
+    <button 
+        mat-menu-item 
+        (click)="changeLanguage('en')"
+        [ngClass]="{'active': activeLang === 'en'}">
+        <mat-icon 
+            [ngStyle]="{'color' : activeLang === 'en' ? 'rgb(194 24 91)' : '' }">
+            language
+        </mat-icon>
+        <span [ngStyle]="{'color' : activeLang === 'en' ? 'rgb(194 24 91)' : '' }">
+            {{'en-language-label' | transloco}}
+        </span>
+    </button>
+    <button 
+        mat-menu-item
+        (click)="changeLanguage('de')"
+        [ngClass]="{'active': activeLang === 'de'}">
+        <mat-icon 
+            [ngStyle]="{'color' : activeLang === 'de' ? 'rgb(194 24 91)' : '' }">
+            language
+        </mat-icon>
+        <span [ngStyle]="{'color' : activeLang === 'de' ? 'rgb(194 24 91)' : '' }">
+            {{'de-language-label' | transloco}}
+        </span>
+    </button>
+</mat-menu>
