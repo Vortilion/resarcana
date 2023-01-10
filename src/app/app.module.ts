@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
-import { ServiceWorkerModule } from '@angular/service-worker';
+import { ServiceWorkerModule, SwPush, SwUpdate } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { HttpClientModule } from '@angular/common/http';
 import { TranslocoRootModule } from './transloco-root.module';
@@ -12,6 +12,7 @@ import { LanguageSelectorComponent } from './language-selector/language-selector
 import { PageHeaderComponent } from './page-header/page-header.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @NgModule({
     declarations: [AppComponent, LanguageSelectorComponent, PageHeaderComponent, HomeComponent],
@@ -38,4 +39,16 @@ import { HomeComponent } from './home/home.component';
     providers: [],
     bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+    constructor(swUpdate: SwUpdate, push: SwPush, snackbar: MatSnackBar) {
+        swUpdate.versionUpdates.subscribe(evt => {
+            if(evt.type === 'VERSION_DETECTED') {
+                const snack = snackbar.open('Update Available', 'Reload');
+
+                snack.onAction().subscribe(() => {
+                    window.location.reload();
+                });
+            }
+        });
+    }
+}

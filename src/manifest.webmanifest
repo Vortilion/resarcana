@@ -1,6 +1,7 @@
 {
     "name": "Res Arcana Randomizer",
-    "short_name": "res-arcana-randomizer",
+    "app_name": "ResArcanaRandomizer",
+    "short_name": "ResArcanaRandomizer",
     "theme_color": "#4b362d",
     "background_color": "#4b362d",
     "display": "standalone",

@@ -55,25 +55,34 @@
             </mat-sidenav>
 
             <mat-sidenav-content>
-                <div class="page-content">
-                    <p>
-                        {{t('monument-count-label')}}: {{ monumentCount }}<br>
-                        {{t('places-count-label')}}: {{ placesCount }}
-                    </p>
-                    <button 
-                        mat-raised-button color="primary" 
-                        (click)="getAndSetRandomPlacesOfPower()">{{t('places-select-label')}}
-                    </button>
-                    <ng-container *transloco="let t; read: 'places-of-power'">
-                        <ul>
-                            <li *ngFor="let place of randomPlacesOfPower">
-                                <span [ngClass]="place.color">{{t(place.name)}}</span>
-                            </li>
-                        </ul>
-                    </ng-container>
+                <div class="sidenav-content">
+                    <div class="page-content">
+                        <p>
+                            {{t('monument-count-label')}}: {{ monumentCount }}<br>
+                            {{t('places-count-label')}}: {{ placesCount }}
+                        </p>
+                        <button 
+                            mat-raised-button color="primary" 
+                            (click)="getAndSetRandomPlacesOfPower()">{{t('places-select-label')}}
+                        </button>
+                        <ng-container *transloco="let t; read: 'places-of-power'">
+                            <ul>
+                                <li *ngFor="let place of randomPlacesOfPower">
+                                    <span [ngClass]="place.color">{{t(place.name)}}</span>
+                                </li>
+                            </ul>
+                        </ng-container>
+                    </div>
+
+                    
                 </div>
-                
             </mat-sidenav-content>
         </mat-sidenav-container>
+
+        <footer class="page-footer">
+            <div class="page-footer__created-by">
+                Res Arcana - Setup Randomizer ({{ t('creator-prefix') }}&nbsp;<a href="https://boardgamegeek.com/user/Vortilion" target="_blank">Vortilion</a>)
+            </div>
+        </footer>
     </div>
 </ng-container>

@@ -1,19 +1,19 @@
-<mat-toolbar color="primary" class="main-toolbar toolbar" [class.is-mobile]="mobileQuery.matches">
-    <button
-        type="button"
-        [hidden]="!mobileQuery.matches"
-        mat-icon-button
-        (click)="sidebarHandle.toggle()">
-        <mat-icon>menu</mat-icon>
-    </button>
-    <h1
-        class="app-name"
-        [style.fontSize.px]="mobileQuery.matches ? 18 : 24">
-        Res Arcana - Setup Randomizer ({{ 'creator-prefix' | transloco }}
-        <a href="https://boardgamegeek.com/user/Vortilion" target="_blank">Vortilion</a>)
-    </h1>
+<div class="page-header">
+    <mat-toolbar color="primary" class="main-toolbar toolbar" [class.is-mobile]="mobileQuery.matches">
+        <button
+            type="button"
+            [hidden]="!mobileQuery.matches"
+            mat-icon-button
+            (click)="sidebarHandle.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <h1
+            class="app-name"
+            [style.fontSize.px]="mobileQuery.matches ? 18 : 24">
+            Res Arcana - Setup Randomizer
+        </h1>
 
-    <span class="spacer"></span>
-    <app-language-selector></app-language-selector>
-</mat-toolbar>
-
+        <span class="spacer"></span>
+        <app-language-selector></app-language-selector>
+    </mat-toolbar>
+</div>

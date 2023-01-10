@@ -1,5 +1,5 @@
 {
-    "creator-prefix": "von",
+    "creator-prefix": "entwickelt von",
     "options-label": "Optionen",
     "expansions-label": "Erweiterungen",
     "players-label": "Spieler",
@@ -8,8 +8,8 @@
     "monument-count-label": "Anzahl Monumente",
     "places-count-label": "Anzahl Orte der Macht",
     "places-select-label": "Zufällige Orte der Macht anzeigen",
-    "en-language-label": "Englisch",
-    "de-language-label": "Deutsch",
+    "en-language-label": "EN",
+    "de-language-label": "DE",
     "places-of-power": {
         "sacred-grove": "Heiliger Hain",
         "alchemists-tower": "Alchemistenturm",

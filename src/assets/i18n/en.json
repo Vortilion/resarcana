@@ -1,5 +1,5 @@
 {
-    "creator-prefix": "by",
+    "creator-prefix": "developed by",
     "options-label": "Options",
     "expansions-label": "Expansions",
     "players-label": "Players",
@@ -8,8 +8,8 @@
     "monument-count-label": "Number of Monuments",
     "places-count-label": "Number of Places of Power",
     "places-select-label": "Show random Places of Power",
-    "en-language-label": "English",
-    "de-language-label": "German",
+    "en-language-label": "EN",
+    "de-language-label": "DE",
     "places-of-power": {
         "sacred-grove": "Sacred Grove",
         "alchemists-tower": "Alchemist's Tower",

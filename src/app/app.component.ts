@@ -13,5 +13,6 @@ import { TranslocoService } from '@ngneat/transloco';
     styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+    constructor() {}
         
 }

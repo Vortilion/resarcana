@@ -38,8 +38,16 @@
     margin-bottom: 15px;
 }
 
+.sidenav-content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
 .page-content {
-    padding: 30px;
+    flex: 1;
+    font-weight: 400;
+    padding: 20px 50px;
 }
 
 .orange {
@@ -48,4 +56,20 @@
 
 .blue {
     color: #1976D2;
+}
+
+.page-footer {
+    background-color: rgb(255 143 0);
+    font-size: 12px;
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 20px;
+
+    &__created-by {
+        display: flex;
+        flex: 1;
+        justify-content: flex-end;
+        min-width: 225px;
+    }
 }
