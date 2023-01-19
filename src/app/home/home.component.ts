@@ -2,7 +2,7 @@ import { MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { MatSelectChange } from '@angular/material/select';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
-import { TranslocoService } from '@ngneat/transloco';
+import { StorageMap } from '@ngx-pwa/local-storage';
 import { PlaceOfPowerSide } from '../models/place-of-power-side.model';
 import { PlayerCountOption } from '../models/player-count-option.model';
 import { ApplicationConfigService } from '../shared/application-config.service';
@@ -28,9 +28,9 @@ export class HomeComponent implements OnInit {
 
     constructor(
         private applicationConfigService: ApplicationConfigService,
-        private translocoService: TranslocoService,
         changeDetectorRef: ChangeDetectorRef,
-        media: MediaMatcher
+        media: MediaMatcher,
+        private storage: StorageMap
     ) {
         this.mobileQuery = media.matchMedia('(max-width: 600px)');
         this._mobileQueryListener = () => changeDetectorRef.detectChanges();
@@ -38,6 +38,20 @@ export class HomeComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        this.storage.get('rar-playerCount').subscribe((playerCount) => {
+            (playerCount && typeof playerCount === 'number') ? this.emitPlayerCount(playerCount) : this.storage.set('rar-playerCount', 2).subscribe(() => {});
+        });
+
+        this.storage.get('rar-useLuxEtTenebrae').subscribe((useLuxEtTenebrae) => {
+            (useLuxEtTenebrae !== undefined && typeof useLuxEtTenebrae === 'boolean') ? 
+                this.applicationConfigService.useLuxEtTenebrae.emit(useLuxEtTenebrae) : this.storage.set('rar-useLuxEtTenebrae', false).subscribe(() => {});
+        });
+
+        this.storage.get('rar-usePerlaeImperii').subscribe((usePerlaeImperii) => {
+            (usePerlaeImperii !== undefined && typeof usePerlaeImperii === 'boolean') ? 
+                this.applicationConfigService.usePerlaeImperii.emit(usePerlaeImperii) : this.storage.set('rar-usePerlaeImperii', false).subscribe(() => {});
+        });
+        
         this.useLuxEtTenebrae = false;
         this.usePerlaeImperii = false;
         this.monumentCount = 10;
@@ -60,12 +74,16 @@ export class HomeComponent implements OnInit {
         this.applicationConfigService.useLuxEtTenebrae.subscribe(
             (useLuxEtTenebrae: boolean) => {
                 this.useLuxEtTenebrae = useLuxEtTenebrae;
+
+                this.updatePlayerCountSelectionAndSetCounts();
             }
         );
 
         this.applicationConfigService.usePerlaeImperii.subscribe(
             (usePerlaeImperii: boolean) => {
                 this.usePerlaeImperii = usePerlaeImperii;
+
+                this.updatePlayerCountSelectionAndSetCounts();
             }
         );
 
@@ -88,6 +106,17 @@ export class HomeComponent implements OnInit {
         );
     }
 
+    updatePlayerCountSelectionAndSetCounts() {
+        this.randomPlacesOfPower = [];
+        let isExpansionSelected: boolean = this.useLuxEtTenebrae || this.usePerlaeImperii;
+        this.updatePlayerCountSelection(isExpansionSelected);
+
+        this.setPlacesCountAndMonumentCountForPlayerCountAndExpansionsSelected(
+            this.playerCount,
+            isExpansionSelected
+        );
+    }
+
     ngOnDestroy(): void {
         this.mobileQuery.removeEventListener(
             'change',
@@ -97,31 +126,28 @@ export class HomeComponent implements OnInit {
 
     onExpansionChange(event: MatSlideToggleChange) {
         if (event.source.name === 'useLuxEtTenebrae') {
+            this.storage.set('rar-useLuxEtTenebrae', event.checked).subscribe(() => {});
             this.applicationConfigService.useLuxEtTenebrae.emit(event.checked);
         } else if (event.source.name === 'usePerlaeImperii') {
+            this.storage.set('rar-usePerlaeImperii', event.checked).subscribe(() => {});
             this.applicationConfigService.usePerlaeImperii.emit(event.checked);
         }
-
-        this.randomPlacesOfPower = [];
-
-        let isExpansionSelected: boolean =
-            this.useLuxEtTenebrae || this.usePerlaeImperii;
-        this.updatePlayerCountSelection(isExpansionSelected);
-
-        this.setPlacesCountAndMonumentCountForPlayerCountAndExpansionsSelected(
-            this.playerCount,
-            isExpansionSelected
-        );
+        
     }
 
-    onPlayerCountChange(event: MatSelectChange) {
-        this.applicationConfigService.playerCount.emit(event.value);
+    emitPlayerCount(playerCount: any) {
+        this.applicationConfigService.playerCount.emit(playerCount);
 
         this.randomPlacesOfPower = [];
         this.setPlacesCountAndMonumentCountForPlayerCountAndExpansionsSelected(
             this.playerCount,
             this.useLuxEtTenebrae || this.usePerlaeImperii
         );
+    }
+
+    onPlayerCountChange(event: MatSelectChange) {
+        this.storage.set('rar-playerCount', event.value).subscribe(() => {});
+        this.emitPlayerCount(event.value);
     }
     
     getAndSetRandomPlacesOfPower() {
@@ -142,7 +168,9 @@ export class HomeComponent implements OnInit {
               });
           }
         } else {
-            this.playerCountList.pop();
+            if(this.playerCountList.length === 5) {
+                this.playerCountList.pop();
+            }
         }
     }
 
@@ -184,10 +212,7 @@ export class HomeComponent implements OnInit {
         }
     }
 
-    private setPlacesCountAndMonumentCountForPlayerCountAndExpansionsSelected(
-        playerCount: number,
-        isExpansionSelected: boolean
-    ) {
+    private setPlacesCountAndMonumentCountForPlayerCountAndExpansionsSelected(playerCount: number, isExpansionSelected: boolean) {
         this.setPlacesOfPowerCountForPlayerCountAndExpansionsSelected(
             playerCount,
             isExpansionSelected

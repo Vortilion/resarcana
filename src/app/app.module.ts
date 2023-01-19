@@ -13,6 +13,7 @@ import { PageHeaderComponent } from './page-header/page-header.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { TranslocoService } from '@ngneat/transloco';
 
 @NgModule({
     declarations: [AppComponent, LanguageSelectorComponent, PageHeaderComponent, HomeComponent],
@@ -40,10 +41,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     bootstrap: [AppComponent],
 })
 export class AppModule {
-    constructor(swUpdate: SwUpdate, push: SwPush, snackbar: MatSnackBar) {
+    constructor(swUpdate: SwUpdate, push: SwPush, snackbar: MatSnackBar, translocoService: TranslocoService) {
         swUpdate.versionUpdates.subscribe(evt => {
             if(evt.type === 'VERSION_DETECTED') {
-                const snack = snackbar.open('Update Available', 'Reload');
+                const snack = snackbar.open(translocoService.translate('messages.update-available'), 'Reload');
 
                 snack.onAction().subscribe(() => {
                     window.location.reload();

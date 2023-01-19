@@ -29,5 +29,8 @@
         "alchemical-workshop": "Alchemical Workshop",
         "blood-isle": "Blood Isle",
         "pearl-bed": "Pearl Bed"
+    },
+    "messages": {
+        "update-available": "Update available"
     }
 }

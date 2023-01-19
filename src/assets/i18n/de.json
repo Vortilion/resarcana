@@ -29,5 +29,8 @@
         "alchemical-workshop": "Alchemistenwerkstatt",
         "blood-isle": "Blutinsel",
         "pearl-bed": "Perlenriff"
+    },
+    "messages": {
+        "update-available": "Update verfügbar"
     }
 }
