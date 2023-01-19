@@ -26,7 +26,6 @@
     "@angular/service-worker": "^15.0.4",
     "@ngneat/transloco": "^4.2.1",
     "@ngx-pwa/local-storage": "^15.0.0",
-    "dexie": "^3.2.2",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
