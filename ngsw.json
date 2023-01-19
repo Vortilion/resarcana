@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1674128080052,
+  "timestamp": 1674141684100,
   "index": "https://vortilion.github.io/res-arcana_randomizer/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "https://vortilion.github.io/res-arcana_randomizer/favicon.ico",
         "https://vortilion.github.io/res-arcana_randomizer/index.html",
-        "https://vortilion.github.io/res-arcana_randomizer/main.9070c641e2d4d2d6.js",
+        "https://vortilion.github.io/res-arcana_randomizer/main.32a7d9236995283e.js",
         "https://vortilion.github.io/res-arcana_randomizer/manifest.webmanifest",
         "https://vortilion.github.io/res-arcana_randomizer/polyfills.a89d2cbfa6bc8416.js",
         "https://vortilion.github.io/res-arcana_randomizer/runtime.1b39d64df10dcb97.js",
@@ -94,8 +94,8 @@
     "https://vortilion.github.io/res-arcana_randomizer/assets/icons/ms-icon-310x310.png": "cb585bf79a0490df9e6462fc9fcf91faa6c8ca54",
     "https://vortilion.github.io/res-arcana_randomizer/assets/icons/ms-icon-70x70.png": "a082cc7872c011adae5b82fd89837620d8c6dacf",
     "https://vortilion.github.io/res-arcana_randomizer/favicon.ico": "9466886e6fde4f0b48658010af715573834874c0",
-    "https://vortilion.github.io/res-arcana_randomizer/index.html": "adb2752ae10c9d4063d02f322ec01234cdc894f8",
-    "https://vortilion.github.io/res-arcana_randomizer/main.9070c641e2d4d2d6.js": "2f4cb2b305ee05b326a5e3def4c585e7b1b6b4af",
+    "https://vortilion.github.io/res-arcana_randomizer/index.html": "481dd67fe702f640c2e5cbeee7f300d24d208586",
+    "https://vortilion.github.io/res-arcana_randomizer/main.32a7d9236995283e.js": "749d564d2f1911300c021afc5a38299e6f67152e",
     "https://vortilion.github.io/res-arcana_randomizer/manifest.webmanifest": "44d456db64e0a1f7db42f4590a00ebb3a0d84b49",
     "https://vortilion.github.io/res-arcana_randomizer/polyfills.a89d2cbfa6bc8416.js": "a39df7c9a3cdebf38e5e76e537e9822044cee078",
     "https://vortilion.github.io/res-arcana_randomizer/runtime.1b39d64df10dcb97.js": "3dad3dc7221fbd5645c958c05c6a944517644c8b",
